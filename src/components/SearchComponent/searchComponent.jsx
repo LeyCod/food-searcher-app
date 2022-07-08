@@ -12,26 +12,40 @@ export const SearchComponent = () => {
         API.getAllData().then(setFood);
     }, []);
 
+
+
+    //Filtrado de datos a un solo array
+    const singleDish = () => {
+        let singleDishArray = [];
+        food.map((item) => (item.food_pairing.map((dish) =>  singleDishArray.push(dish))))
+        return singleDishArray;
+    }
+
+    const handleChange = (e) => {
+        setSearch(e.target.value);
+    }
+
+    const result = !search ? singleDish() : singleDish().filter((item) => item.toLowerCase().includes(search.toLowerCase()))
+
     return (
     <>
 
-        <form action="">
-            <input type="search" value={search} onChange={(e) => setSearch(e.target.value)} name="q" placeholder="Search your food" id="input-search" className='form-control'/>
+        <form>
+            <input type="search" value={search} onChange={handleChange} placeholder="Search your food" id="input-search" className='form-control'/>
         </form> 
+
         <div>
             <table className='table table-striped table-hover'>
                 <thead>
                     <tr>
-                        <th className=''>DISHES</th>
+                        <th className='text-center'>DISHES</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {food.map((item) => (
-                            item.food_pairing.map((dish, index) => (
-                                <tr>
-                                    <td key={index}>{dish}</td>
-                                </tr>                               
-                            ))
+                    { result.map((dish) => (
+                        <tr>
+                        <td className='text-center'>{dish}</td>
+                        </tr>
                     ))}
                 </tbody>
             </table>
