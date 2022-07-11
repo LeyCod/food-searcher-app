@@ -1,11 +1,10 @@
 import { SearchComponent } from "./components/SearchComponent/searchComponent";
 
-import './App.css';
 
 function App() {
   return (
-    <div className="container-fluid">
-      <h1 className="text-center">Foodgler</h1>
+    <div className="container-fluid bg-white w-75">
+      <h1 className="d-flex justify-content-center align-items-center header-title ">Foodgler</h1>
       <SearchComponent />
     </div>
   );

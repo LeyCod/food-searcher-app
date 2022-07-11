@@ -1,0 +1,29 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: url(https://images.pexels.com/photos/255501/pexels-photo-255501.jpeg) no-repeat fixed center;
+    background-size: cover;
+}
+
+.list-element {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.bg-white {
+    --bs-bg-opacity: 0.7;
+    background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.header-title {
+    height: 200px;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.table-header {
+    font-size: 1.3rem;
+}
+
+.table-container::-webkit-scrollbar {
+    width: 8px;
+    background: #f1f1f1;
+}

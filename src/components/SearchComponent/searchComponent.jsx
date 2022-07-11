@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import * as API from '../../service/food.js'
+import './search_component.css'
 
 
 export const SearchComponent = () => {
@@ -21,30 +22,32 @@ export const SearchComponent = () => {
         return singleDishArray;
     }
 
+    //Handle
     const handleChange = (e) => {
         setSearch(e.target.value);
     }
 
+    //Filtrado de busqueda
     const result = !search ? singleDish() : singleDish().filter((item) => item.toLowerCase().includes(search.toLowerCase()))
 
     return (
     <>
 
-        <form>
-            <input type="search" value={search} onChange={handleChange} placeholder="Search your food" id="input-search" className='form-control'/>
-        </form> 
+        <form className='col-lg-5 mx-auto mb-5 shadow'>
+            <input type="search" value={search} onChange={handleChange} placeholder="Search your food" id="input-search" className='form-control text-center'/>
+        </form>
 
-        <div>
-            <table className='table table-striped table-hover'>
+        <div className='vh-100 overflow-auto table-container'>
+            <table className='table table-striped table-hover border border-secondary'>
                 <thead>
                     <tr>
-                        <th className='text-center'>DISHES</th>
+                        <th className='text-center table-header'>DISHES</th>
                     </tr>
                 </thead>
                 <tbody>
                     { result.map((dish) => (
                         <tr>
-                        <td className='text-center'>{dish}</td>
+                        <td className='text-center list-element'>{dish}</td>
                         </tr>
                     ))}
                 </tbody>
