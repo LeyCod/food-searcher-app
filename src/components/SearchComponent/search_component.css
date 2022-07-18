@@ -9,21 +9,52 @@ body {
 }
 
 .bg-white {
-    --bs-bg-opacity: 0.7;
+    --bs-bg-opacity: 0.9;
     background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .header-title {
     height: 200px;
-    font-size: 4rem;
     font-weight: 700;
+}
+
+/* Small devices (landscape phones, 360px and up) */
+@media (min-width: 350px) {  
+    .header-title {font-size:3rem;} /*1rem = 16px*/
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+    .header-title {font-size:3.7rem;} /*1rem = 16px*/
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .header-title {font-size:4.5rem;} /*1rem = 16px*/
 }
 
 .table-header {
     font-size: 1.3rem;
 }
 
+
+/*Firefox scrollbar*/
+.table-container {
+    scrollbar-width: thin;          
+    scrollbar-color: #E6E5E4 #FFFCF8;   
+}
+
+/*Chrome, Edge, and Safari scroll */
 .table-container::-webkit-scrollbar {
-    width: 8px;
-    background: #f1f1f1;
+    width: 12px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: rgb(241, 233, 216);
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #E6E5E4;
+    border-radius: 20px;
+    border: 3px solid #FFFCF8;
 }

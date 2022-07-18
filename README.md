@@ -1,3 +1,10 @@
+## Searcher using API
+
+This project was done using ReactJS, React Hooks, Bootstrap and Css. 
+
+The API used for this project was [Punk API](https://punkapi.com/)
+
+## Available Scripts
 
 In the project directory, you can run:
 

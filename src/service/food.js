@@ -15,12 +15,12 @@ export const getAllData = async () => {
 
 //Get Food from API
 
-// export const getFood = async (searchTerm) => {
-//     try {
-//     const response = await fetch(`${BASE_URL}beers?food=${searchTerm}`);
-//     const data = await response.json();
-//     return data;
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
+export const getFood = async (searchTerm) => {
+    try {
+    const response = await fetch(`${BASE_URL}beers?food=${searchTerm}`);
+    const data = await response.json();
+    return data;
+    } catch (error) {
+        console.log(error);
+    }
+}

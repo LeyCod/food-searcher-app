@@ -7,7 +7,7 @@ export const SearchComponent = () => {
 
     // Hooks
     const [ food, setFood ] = useState([])
-    const [ search, setSearch ] = useState('')
+    const [ searchFood, setSearchFood ] = useState('')
 
     useEffect(() => {
         API.getAllData().then(setFood);
@@ -22,22 +22,23 @@ export const SearchComponent = () => {
         return singleDishArray;
     }
 
-    //Handle
+
+    // Handle Change
     const handleChange = (e) => {
-        setSearch(e.target.value);
+        setSearchFood(e.target.value);
     }
 
     //Filtrado de busqueda
-    const result = !search ? singleDish() : singleDish().filter((item) => item.toLowerCase().includes(search.toLowerCase()))
+    const result = !searchFood ? singleDish() : singleDish().filter((item) => item.toLowerCase().includes(searchFood.toLowerCase()))
 
     return (
     <>
 
         <form className='col-lg-5 mx-auto mb-5 shadow'>
-            <input type="search" value={search} onChange={handleChange} placeholder="Search your food" id="input-search" className='form-control text-center'/>
+            <input type="search" onChange={handleChange} placeholder="Search your food" id="input-search" className='form-control text-center'/>
         </form>
 
-        <div className='vh-100 overflow-auto table-container'>
+        <div className='vh-100 col-xs-10 overflow-auto table-container'>
             <table className='table table-striped table-hover border border-secondary'>
                 <thead>
                     <tr>
